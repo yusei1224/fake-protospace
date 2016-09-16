@@ -27,7 +27,7 @@
 +belongs_to :user
 +has_many :likes
 +has_many :prototype_images
-+
++has_many :comments
 +*column*
 +concept :text
 +catchcopy :text
@@ -37,6 +37,7 @@
 +**comments**
 +*association*
 +belongs_to :user
++has_many :prototypes
 +
 +*column*
 +content :text
@@ -46,7 +47,7 @@
 +**likes**
 +*association*
 +belongs_to :prototype
-+
++belongs_to :user
 +*column*
 +user_id :integer
 +prototype_id :integer
@@ -54,8 +55,10 @@
 +**prototype_images**
 +*association*
 +belongs_to :prototype
++belongs_to :user
 +*column*
 +image :text
 +status :{main_image: 0,sub_images: 1}
 +prototype_id :integer
++user_id :integer
 
